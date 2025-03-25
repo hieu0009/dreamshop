@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("pdf2png/menu (1)/menu (1)-1.png")no-repeat center center fixed;
+    background-size: cover;
+            color: white;
+            text-align: center;
+			overflow: hidden;
+			position: relative;
+			cursor: grabbing;
+			
+        }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../../../../anh cho trang web giac mo/pdf2png/menu (1)/menu (1)-1.png") no-repeat center center fixed;
+    background-size: cover;
+    background: rgba(0, 0, 0, 0.7); /* Lớp màu tối để che noise */
+    z-index: -1;
+}
+.background-blur {
+    backdrop-filter: blur(150px);
+}
+
+        .main-text {
+            font-size: 100px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        .info {
+            font-size: 18px;
+            max-width: 600px;
+            opacity: 0.8;
+        }
+/* Header */
+header {
+    margin: 50px 0;
+}
+
+
+
+/* Thông tin chính */
+.info {
+    font-size: 18px;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* Khung hình */
+/* Bố cục chứa ảnh */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Khung chứa ảnh */
+.image-box {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+/* Viền gradient (dùng pseudo-element để không ảnh hưởng ảnh bên trong) */
+.image-box::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg, #8B5A2B, #4E342E, #C19A6B, #8B5A2B);
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0; /* Ẩn viền ban đầu */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Khi hover hoặc bấm vào, viền gradient xuất hiện */
+.image-box:hover::before,
+.image-box:active::before {
+    opacity: 1;
+}
+
+/* Hiệu ứng gradient chạy */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Ảnh bên trong giữ nguyên kích thước */
+.image-box img {
+     width: 100%;
+	opacity: 0.7;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+	filter: sepia(100%) hue-rotate(15deg)  brightness(90%) contrast(150%);
+}
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 16px;
+            opacity: 0.7;
+        }
+.title {
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(270deg, #ffffff, #dcdcdc, #a8a8a8, #dcdcdc, #ffffff);
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradientMove 2.5s ease-in-out infinite alternate;
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Animation Gradient */
+@keyframes textGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+a {
+    text-decoration: none; /* Xóa gạch chân */
+    color: inherit; /* Giữ nguyên màu chữ của thẻ cha */
+}
+ p, 
+ a {
+	 
+    color: whitesmoke; /* Màu vàng nâu */
+	 text-shadow: 3px 3px 8px rgba(120, 50, 10, 0.7);
+}
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffffff, #dcdcdc, #bfbfbf, #dcdcdc, #ffffff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text; !important;
+    -webkit-text-fill-color: transparent;
+    animation: gradientGlow 3s infinite alternate ease-in-out;
+}
+
+/* Animation Gradient */
+@keyframes textGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}     
+/* Animation Gradient Chạy */
+@keyframes textGradientMove {
+    0% { background-position: 0% 50%; }
+    33% { background-position: 50% 50%; }
+    66% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}     
